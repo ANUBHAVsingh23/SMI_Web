@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: connect
+    runtime: node
+    plan: free
+    buildCommand: npx update-browserslist-db@latest && npm install && npm run build
+    startCommand: npm run preview
+    ports:
+      - port: 4173
+        protocol: HTTP
+    envVars:
+      - key: NODE_VERSION
+        value: 18
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 4173
