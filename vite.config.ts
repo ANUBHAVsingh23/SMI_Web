@@ -13,7 +13,8 @@ export default defineConfig(({ command, mode }) => {
     },
     preview: {
       port: parseInt(process.env.PORT) || 4173,
-      host: '0.0.0.0'
+      host: '0.0.0.0',
+      allowedHosts: ['smi-web-1.onrender.com', 'localhost', '127.0.0.1']
     },
     build: {
       outDir: 'dist',
